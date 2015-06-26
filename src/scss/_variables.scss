@@ -8,6 +8,9 @@ $image-path: '../img' !default;
 $fallback-extension: 'png' !default;
 $retina-suffix: '@2x';
 
+$fontSans: 'Roboto', sans-serif;
+$fontSerif: 'Vollkorn', serif;
+
 
 
 /* MIXINS & FUNCTIONS */
@@ -17,6 +20,22 @@ $retina-suffix: '@2x';
        -moz-transition: $what, $time, $ease;
          -o-transition: $what, $time, $ease;
             transition: $what, $time, $ease;
+}
+
+@mixin button($color, $secondColor, $thirdColor){
+    background-color: $color;
+    border: 2px solid $secondColor;
+    padding: 20px 50px;
+    color: $secondColor;
+    font-size: 14px;
+    letter-spacing: 2px;
+    @include transition(all, .5s, ease);
+
+    &:hover {
+        cursor: pointer;
+        color: $thirdColor;
+        background-color: $secondColor;
+    }
 }
 
 @mixin background-image($name, $size:false){

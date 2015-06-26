@@ -1,13 +1,19 @@
+/* IMPORT SUSY GRID SYSTEM */
 @import "../../bower_components/susy/sass/_susy.scss";
 
+/* GOOGLE WEB FONTS */
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:400,700|Roboto:400,100,700);
+
+/* LOAD VARIABLES */
 @import "_variables.scss";
 
+/* DELETE FROM HERE DOWN TO START FRESH OR VIEW EXAMPLES FOR SUSY AND SASS STRUCTURE */
 body{
-    //@include container(70em);
     margin: 0;
     width: 100%;
     height: 100%;
     background-color: $gray;
+    font-family: $fontSerif;
 
 
 }
@@ -17,7 +23,6 @@ nav{
     height: 80px;
     background-color: $white;
     margin-bottom: 10px;
-    @include box-shadow(1px, 1px, 4px, gray);
 
     @include transition(all, .5s, ease);
 
@@ -25,6 +30,7 @@ nav{
         height: 100px;
     }
 }
+
 
 .row{
     @include container(70em);
@@ -38,6 +44,10 @@ nav{
     }
 }
 
+.primary-button{
+    @include button(transparent, $gray, black);
+}
+
 
 /* EXAMPLE GRID BOX CLASSES */
 
@@ -45,7 +55,6 @@ nav{
     height: 150px;
     background-color: $white;
     margin-bottom: 10px;
-    @include box-shadow(1px, 1px, 4px, gray);
 
     @include mobile {
          height: 120px;
@@ -54,10 +63,13 @@ nav{
 
 .box1{
     @include span(12 of 12);
+    @include box-shadow(1px, 1px, 4px, gray);
     background-image: url('../images/bg.jpg');
     background-size: 100% auto;
-    background-position: 0px -300px;
-    height: 350px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
 
 }
 
@@ -104,6 +116,35 @@ nav{
     @include mobile {
          @include span(12 of 12);
     }
+}
+
+.image-overlay-content{
+    @include span(12 of 12);
+    height: 92vh;
+
+    .image-overlay-text{
+        @include span(5 of 12);
+        color: $gray;
+        position: absolute;
+        bottom: 160px;
+        left: 12%;
+        padding: 50px;
+        background-color: rgba(0,0,0, .6);
+
+        h1{
+            font-family: $fontSans;
+            font-weight: 100;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        p{
+            @include font-size(18px);
+            letter-spacing: 1px;
+            line-height: 26px;
+        }
+    }
+
 }
 
 
