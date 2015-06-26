@@ -1,0 +1,112 @@
+@import "../../bower_components/susy/sass/_susy.scss";
+
+@import "_variables.scss";
+
+body{
+    //@include container(70em);
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $gray;
+
+
+}
+
+nav{
+    @include span(12 of 12);
+    height: 80px;
+    background-color: $white;
+    margin-bottom: 10px;
+    @include box-shadow(1px, 1px, 4px, gray);
+
+    @include transition(all, .5s, ease);
+
+    &:hover{
+        height: 100px;
+    }
+}
+
+.row{
+    @include container(70em);
+
+    @include tablet{
+        @include container(50em);
+    }
+
+    @include mobile{
+        @include container(20em);
+    }
+}
+
+
+/* EXAMPLE GRID BOX CLASSES */
+
+.box{
+    height: 150px;
+    background-color: $white;
+    margin-bottom: 10px;
+    @include box-shadow(1px, 1px, 4px, gray);
+
+    @include mobile {
+         height: 120px;
+    }
+}
+
+.box1{
+    @include span(12 of 12);
+    background-image: url('../images/bg.jpg');
+    background-size: 100% auto;
+    background-position: 0px -300px;
+    height: 350px;
+
+}
+
+.box2{
+    @include span(6 of 12);
+
+    &:nth-child(2){
+        @include span(6 of 12 last);
+        @include mobile {
+            @include span(12 of 12);
+        }
+    }
+
+    @include mobile {
+         @include span(12 of 12);
+    }
+}
+
+.box3{
+    @include span(3 of 12);
+
+    &:nth-child(4){
+        @include span(3 of 12 last);
+        @include mobile {
+            @include span(12 of 12);
+        }
+    }
+
+    @include mobile {
+         @include span(12 of 12);
+    }
+}
+
+.box4{
+    @include span(4 of 12);
+
+    &:nth-child(3){
+        @include span(4 of 12 last);
+        @include mobile {
+            @include span(12 of 12);
+        }
+    }
+
+    @include mobile {
+         @include span(12 of 12);
+    }
+}
+
+
+
+
+

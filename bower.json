@@ -1,0 +1,19 @@
+{
+  "name": "Gulp-Susy",
+  "version": "0.0.0",
+  "authors": [
+    "Jordan Johnson <jordan.johnson.lz.108@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.5"
+  }
+}
